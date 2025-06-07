@@ -43,7 +43,7 @@ enum Currency {
   egp('£'), // Egyptian Pound
   ern('Nfa'), // Eritrean Nakfa
   etb('Br'), // Ethiopian Birr
-  euro('€'), // Euro
+  eur('€'), // Euro
   fjd(r'$'), // Fijian Dollar
   fkp('£'), // Falkland Islands Pound
   gbp('£'), // British Pound Sterling
@@ -140,7 +140,8 @@ enum Currency {
   tmt('m'), // Turkmenistani Manat
   tnd('د.ت'), // Tunisian Dinar
   top(r'T$'), // Tongan Paʻanga
-  try_('₺'), // Turkish Lira
+  // ignore: constant_identifier_names
+  TRY('₺'), // Turkish Lira
   ttd(r'$'), // Trinidad and Tobago Dollar
   twd(r'NT$'), // New Taiwan Dollar
   tzs('TSh'), // Tanzanian Shilling
@@ -170,4 +171,11 @@ enum Currency {
   final String symbol;
 
   String get code => name.toUpperCase();
+
+  static Currency fromCode(String code) {
+    return values.firstWhere(
+      (currency) => currency.code == code.toUpperCase(),
+      orElse: () => throw ArgumentError('Invalid currency code: $code'),
+    );
+  }
 }

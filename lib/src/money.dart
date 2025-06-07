@@ -1,6 +1,8 @@
 // ignore_for_file: sort_constructors_first
 
 import 'package:currency/src/currency.dart';
+import 'package:currency/src/currency_converter.dart';
+import 'package:currency/src/provider/provider.dart';
 
 class Money {
   const Money(this.amount, this.currency);
@@ -8,6 +10,7 @@ class Money {
   final num amount;
   final Currency currency;
 
+  /* --------------------------- Const Constructors --------------------------- */
   const Money.aed(num amount) : this(amount, Currency.aed);
   const Money.afn(num amount) : this(amount, Currency.afn);
   const Money.all(num amount) : this(amount, Currency.all);
@@ -52,7 +55,7 @@ class Money {
   const Money.egp(num amount) : this(amount, Currency.egp);
   const Money.ern(num amount) : this(amount, Currency.ern);
   const Money.etb(num amount) : this(amount, Currency.etb);
-  const Money.euro(num amount) : this(amount, Currency.euro);
+  const Money.eur(num amount) : this(amount, Currency.eur);
   const Money.fjd(num amount) : this(amount, Currency.fjd);
   const Money.fkp(num amount) : this(amount, Currency.fkp);
   const Money.gbp(num amount) : this(amount, Currency.gbp);
@@ -149,7 +152,8 @@ class Money {
   const Money.tmt(num amount) : this(amount, Currency.tmt);
   const Money.tnd(num amount) : this(amount, Currency.tnd);
   const Money.top(num amount) : this(amount, Currency.top);
-  const Money.try_(num amount) : this(amount, Currency.try_);
+  // ignore: non_constant_identifier_names
+  const Money.TRY(num amount) : this(amount, Currency.TRY);
   const Money.ttd(num amount) : this(amount, Currency.ttd);
   const Money.twd(num amount) : this(amount, Currency.twd);
   const Money.tzs(num amount) : this(amount, Currency.tzs);
@@ -219,7 +223,7 @@ class Money {
   const Money.egyptianPounds(num amount) : this(amount, Currency.egp);
   const Money.eritreanNakfas(num amount) : this(amount, Currency.ern);
   const Money.ethiopianBirrs(num amount) : this(amount, Currency.etb);
-  const Money.euros(num amount) : this(amount, Currency.euro);
+  const Money.euros(num amount) : this(amount, Currency.eur);
   const Money.fijianDollars(num amount) : this(amount, Currency.fjd);
   const Money.falklandPounds(num amount) : this(amount, Currency.fkp);
   const Money.britishPounds(num amount) : this(amount, Currency.gbp);
@@ -317,7 +321,7 @@ class Money {
   const Money.turkmenistaniManats(num amount) : this(amount, Currency.tmt);
   const Money.tunisianDinars(num amount) : this(amount, Currency.tnd);
   const Money.tonganPaangas(num amount) : this(amount, Currency.top);
-  const Money.turkishLiras(num amount) : this(amount, Currency.try_);
+  const Money.turkishLiras(num amount) : this(amount, Currency.TRY);
   const Money.trinidadAndTobagoDollars(num amount) : this(amount, Currency.ttd);
   const Money.newTaiwanDollars(num amount) : this(amount, Currency.twd);
   const Money.tanzanianShillings(num amount) : this(amount, Currency.tzs);
@@ -342,8 +346,30 @@ class Money {
   const Money.southAfricanRand(num amount) : this(amount, Currency.zar);
   const Money.zambianKwacha(num amount) : this(amount, Currency.zmw);
 
+  /* --------------------------------- Methods -------------------------------- */
+  Money convertTo(
+    Currency target, {
+    required ExchangeRateProvider rateProvider,
+  }) {
+    final rate = rateProvider.getRate(this.currency, target);
+
+    if (rate == null) {
+      throw ArgumentError(
+        'No exchange rate available from ${this.currency.code} to ${target.code}. '
+        'Provide a ExchangeRateProvider with valid rates for base and '
+        'target currencies.',
+      );
+    }
+
+    return Money(amount * rate, target);
+  }
+
+  /* --------------------------------- Getters -------------------------------- */
+  CurrencyConverter get to => CurrencyConverter(this);
+
+  /* -------------------------------- Overrides ------------------------------- */
   @override
-  String toString() => '$amount ${currency.symbol}'; // e.g. for euro "42 €"
+  String toString() => '$amount ${currency.symbol}'; // e.g. for eur "42 €"
 
   @override
   bool operator ==(Object other) {

@@ -1,4 +1,6 @@
 // Extension to add currency getters to num
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:currency/src/src.dart';
 
 extension MoneyExtension on num {
@@ -46,7 +48,7 @@ extension MoneyExtension on num {
   Money get egp => Money(this, Currency.egp);
   Money get ern => Money(this, Currency.ern);
   Money get etb => Money(this, Currency.etb);
-  Money get eur => Money(this, Currency.euro);
+  Money get eur => Money(this, Currency.eur);
   Money get fjd => Money(this, Currency.fjd);
   Money get fkp => Money(this, Currency.fkp);
   Money get gbp => Money(this, Currency.gbp);
@@ -143,7 +145,7 @@ extension MoneyExtension on num {
   Money get tmt => Money(this, Currency.tmt);
   Money get tnd => Money(this, Currency.tnd);
   Money get top => Money(this, Currency.top);
-  Money get try_ => Money(this, Currency.try_);
+  Money get TRY => Money(this, Currency.TRY);
   Money get ttd => Money(this, Currency.ttd);
   Money get twd => Money(this, Currency.twd);
   Money get tzs => Money(this, Currency.tzs);
@@ -215,7 +217,7 @@ extension MoneyExtensionAliases on num {
   Money get egyptianPounds => Money(this, Currency.egp);
   Money get eritreanNakfas => Money(this, Currency.ern);
   Money get ethiopianBirrs => Money(this, Currency.etb);
-  Money get euros => Money(this, Currency.euro);
+  Money get euros => Money(this, Currency.eur);
   Money get fijianDollars => Money(this, Currency.fjd);
   Money get falklandPounds => Money(this, Currency.fkp);
   Money get britishPounds => Money(this, Currency.gbp);
@@ -312,7 +314,7 @@ extension MoneyExtensionAliases on num {
   Money get turkmenManats => Money(this, Currency.tmt);
   Money get tunisianDinars => Money(this, Currency.tnd);
   Money get tonganPaangas => Money(this, Currency.top);
-  Money get turkishLiras => Money(this, Currency.try_);
+  Money get turkishLiras => Money(this, Currency.TRY);
   Money get trinidadDollars => Money(this, Currency.ttd);
   Money get taiwanDollars => Money(this, Currency.twd);
   Money get tanzanianShillings => Money(this, Currency.tzs);
