@@ -1,9 +1,9 @@
 name: currency
 description: A minimal and type-safe Dart currency conversion library.
-homepage: https://dev.azure.com/inline-test/InlineX%20Flutter%20Monorepo
-repository: https://dev.azure.com/inline-test/_git/InlineX%20Flutter%20Monorepo
-issue_tracker: https://dev.azure.com/inline-test/InlineX%20Flutter%20Monorepo/_workitems/assignedtome/
-documentation: https://inlinetest.atlassian.net/wiki/spaces/IX3/pages/65575/Mobile+App?cloudId=dd72f531-6a40-4b6c-a8ad-87ff7aca5fd2
+homepage: https://github.com/Moelfarri
+repository: https://github.com/Moelfarri/currency
+issue_tracker: https://github.com/Moelfarri/currency/issues
+documentation: https://github.com/Moelfarri/currency/blob/main/README.md
 version: 1.0.0
 environment:
   sdk: ^3.6.2
