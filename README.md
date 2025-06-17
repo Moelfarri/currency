@@ -111,7 +111,7 @@ You can set it globally in your app like this:
 ```dart
   CurrencyConverter.exchangeRateProvider = CustomExchangeRateProvider.instance;
 
-  final Money nok = 42.norwegianCrowns;
+  final Money usd = 42.norwegianCrowns.to.usDollars;
 ```
 
 Or use it directly in the conversion:
