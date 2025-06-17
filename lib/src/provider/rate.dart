@@ -1,4 +1,4 @@
-import 'package:valuta/currency.dart';
+import 'package:valuta/valuta.dart';
 
 /// Custom Rate Provider
 class Rate implements ExchangeRateProvider {

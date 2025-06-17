@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:valuta/currency.dart';
+import 'package:valuta/valuta.dart';
 import 'package:http/http.dart' as http;
 
 /// A free exchange rate provider that uses the Frankfurter API
