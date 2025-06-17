@@ -140,7 +140,7 @@ final Money nokToUSD = 42.norwegianCrowns.convertTo(
 
 ### License
 
-You can find the full license [here](LICENSE.md).
+You can find the full license [here](LICENSE).
 
 ### Contributing
 
