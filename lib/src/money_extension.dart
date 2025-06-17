@@ -1,7 +1,7 @@
 // Extension to add currency getters to num
 // ignore_for_file: non_constant_identifier_names
 
-import 'package:currency/src/src.dart';
+import 'package:currency_dart/src/src.dart';
 
 extension MoneyExtension on num {
   Money get aed => Money(this, Currency.aed);

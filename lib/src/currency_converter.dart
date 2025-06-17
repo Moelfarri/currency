@@ -1,6 +1,6 @@
-import 'package:currency/src/currency.dart';
-import 'package:currency/src/money.dart';
-import 'package:currency/src/provider/provider.dart';
+import 'package:currency_dart/src/currency.dart';
+import 'package:currency_dart/src/money.dart';
+import 'package:currency_dart/src/provider/provider.dart';
 
 class CurrencyConverter {
   const CurrencyConverter(this.money);
