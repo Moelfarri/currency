@@ -1,8 +1,8 @@
 // ignore_for_file: sort_constructors_first
 
-import 'package:currency_dart/src/currency.dart';
-import 'package:currency_dart/src/currency_converter.dart';
-import 'package:currency_dart/src/provider/provider.dart';
+import 'package:valuta/src/currency.dart';
+import 'package:valuta/src/currency_converter.dart';
+import 'package:valuta/src/provider/provider.dart';
 
 class Money {
   const Money(this.amount, this.currency);

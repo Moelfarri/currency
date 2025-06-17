@@ -1,4 +1,4 @@
-import 'package:currency_dart/currency.dart';
+import 'package:valuta/currency.dart';
 
 ///
 abstract interface class ExchangeRateProvider {

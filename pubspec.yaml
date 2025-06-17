@@ -1,4 +1,4 @@
-name: currency_dart
+name: valuta
 description: A minimal and type-safe Dart currency conversion library.
 homepage: https://github.com/Moelfarri
 repository: https://github.com/Moelfarri/currency

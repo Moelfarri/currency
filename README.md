@@ -1,4 +1,4 @@
-# 💱 Currency.dart
+# 💱 Valuta.dart
 
 ![logo_horizontal.png](pic/logo_horizontal.png)
 

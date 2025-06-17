@@ -1,4 +1,6 @@
-import 'package:currency_dart/currency.dart';
+// ignore_for_file: avoid_print
+
+import 'package:valuta/currency.dart';
 
 void main() async {
   /// Initialize your currency provider that caches rates

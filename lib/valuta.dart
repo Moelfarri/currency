@@ -1,3 +1,3 @@
-library currency;
+library valuta;
 
 export 'src/src.dart';
